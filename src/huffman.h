@@ -19,4 +19,15 @@ long long optimal_wpl_queue(const int freq[], int n);
 // by member B
 int is_prefix_free(const char codes[][MAXL], int n);
 
+// Alternative implementations, with the same result as the array Trie above.
+int is_prefix_free_sort(const char codes[][MAXL], int n);
+int is_prefix_free_pairwise(const char codes[][MAXL], int n);
+// The pointer Trie also returns 0 if memory allocation fails.
+int is_prefix_free_tree(const char codes[][MAXL], int n);
+
+// Necessary condition only: 1 means sum(2^(-length)) <= 1.
+// Passing this check does NOT prove that the given codes are prefix-free.
+// Inputs follow the problem: 2 <= n <= 63, nonempty binary strings <= 63 bits.
+int satisfies_kraft(const char codes[][MAXL], int n);
+
 #endif
